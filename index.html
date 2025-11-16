@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>С днем рождения Цыганчик на Андруше</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+
+            /* Круговой градиент на весь экран */
+            background: radial-gradient(circle at center, #935a23, #000000);
+        }
+
+        /* Фон-картинка уменьшенная, по центру */
+        .background-img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: auto;
+            height: 100vh;
+            z-index: 1;
+        }
+
+        /* Подпись сверху */
+        .title {
+            position: absolute;
+            top: 100px;
+            width: 100%;
+            text-align: center;
+            font-size: 38px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px black;
+            z-index: 5;
+        }
+
+        /* Стрелки */
+        .arrow {
+            position: absolute;
+            font-size: 60px;
+            color: white;
+            text-shadow: 0 0 10px black;
+            animation: blink 1.2s infinite;
+            z-index: 5;
+        }
+
+        .arrow-left {
+            left: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .arrow-right {
+            right: 10%;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        /* Невидимая кнопка - ИСПРАВЛЕННАЯ */
+        .hidden-button {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 100; /* Увеличиваем z-index чтобы была поверх всех элементов */
+            opacity: 0.01; /* Почти невидима, но кликабельна */
+        }
+
+        /* Дополнительно: подсветка при наведении для тестирования */
+        .hidden-button:hover {
+            background: rgba(255, 255, 255, 0.1); /* Легкая подсветка при наведении */
+        }
+
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <img class="background-img" src="background.jpg" alt="Фон">
+
+    <div class="title">С днем рождения Цыганчик на Андруше</div>
+
+    <div class="arrow arrow-left">➡</div>
+    <div class="arrow arrow-right">⬅</div>
+
+    <!-- Исправленная кнопка -->
+    <button class="hidden-button" onclick="window.open('https://drive.google.com/file/d/1E8_tfjtlTPHIwOgefrEhK7fMVOTFRDvS/view?usp=sharing', '_blank')"></button>
+
+</body>
+</html>
